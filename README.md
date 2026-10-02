@@ -1,0 +1,3 @@
+## 1. THE PROJECT
+
+We are going to build an **AI Study Assistant API**, a backend system that allows students to send questions and receive AI-generated explanations. The student will send a question to our backend, our backend will receive and validate the question, then communicate with an AI API to generate an answer. Once the AI responds, our backend will process the response and send the answer back to the student. This project will help us understand how a backend can communicate with an external AI service while applying the JavaScript, Node.js, Express, APIs, HTTP requests, `async/await`, JSON, and error handling concepts we have already learned.
