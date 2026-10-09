@@ -42,11 +42,7 @@ For this project, system design is the bridge between our PRD/problem statement 
 
 
 
-
-Yes — *Groq API*, not Graph API. For this project, I would teach the students the technologies **before writing the actual project code**.
-
-The goal is not to teach every feature of each technology. We only teach **what they need for the AI Study Assistant**, with a definition, simple explanation, types where relevant, and a small syntax example.
-
+6
 # Technologies & Concepts Required for the AI Study Assistant
 
 ## 1. Node.js

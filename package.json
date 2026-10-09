@@ -1,5 +1,20 @@
 {
   "dependencies": {
-    "dotenv": "^18.0.5"
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.6.0"
+  },
+  "name": "ai-study-assistant-api",
+  "version": "1.0.0",
+  "description": "We are going to build an **AI Study Assistant API**, a backend system that allows students to send questions and receive AI-generated explanations. The student will send a question to our backend, our backend will receive and validate the question, then communicate with an AI API to generate an answer. Once the AI responds, our backend will process the response and send the answer back to the student. This project will help us understand how a backend can communicate with an external AI service while applying the JavaScript, Node.js, Express, APIs, HTTP requests, `async/await`, JSON, and error handling concepts we have already learned.",
+  "main": "ask.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
