@@ -3,6 +3,14 @@ require("dotenv").config();
 const Groq = require("groq-sdk");
 
 
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY
+});
+
+
+const model = "openai/gpt-oss-20b";
+
+
 
 const app = express();
 
@@ -25,7 +33,7 @@ app.listen(PORT, () => {
 
 
 
-app.post("/ask", (req, res) =>{
+app.post("/ask", async (req, res) =>{
     const { question } = req.body;
 
     if(!question){
@@ -35,13 +43,39 @@ app.post("/ask", (req, res) =>{
             }
         )
     }
+    
+    try{
+        const completion = await groq.chat.completions.create({
+            model: "openai/gpt-oss-20b",
+            message: [
+                {
+                    role: 'user',
+                    content: question
+                }
+            ]
+        });
+        const answer = completion.choices[0].message.content;
 
-    res.json(
-        {
-            message: "your question is prossessing",
-            question: question
-        }
-    )
+        res.json({
+            question: question,
+            answer: answer
+        });
+
+
+
+     }catch(error){
+        console.error(error);
+
+        res.status(500).json(
+            {
+                message: "internal server error"
+            }
+        )
+    }
+    
+    
+
+
 })
 
 
